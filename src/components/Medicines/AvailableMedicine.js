@@ -12,11 +12,35 @@ const DUMMY_MEDICINE = [{
 {
     id: '2',
     name: 'Aspirin',
-    description: 'Uses for Fever control',
+    description: 'Uses for pain control',
     price: 7.9
 },
 {
     id: '3',
+    name: 'Avil 50',
+    description: 'Uses for reaction control',
+    price: 12.33
+},
+{
+    id: '4',
+    name: 'ZinCovid',
+    description: 'Uses for Covid cases',
+    price: 46
+},
+{
+    id: '5',
+    name: 'Avil 50',
+    description: 'Uses for Fever control',
+    price: 12.33
+},
+{
+    id: '6',
+    name: 'Avil 50',
+    description: 'Uses for Fever control',
+    price: 12.33
+},
+{
+    id: '7',
     name: 'Avil 50',
     description: 'Uses for Fever control',
     price: 12.33
@@ -25,8 +49,8 @@ const DUMMY_MEDICINE = [{
 const AvailableMedicine = (props) => {
     const medicines = DUMMY_MEDICINE.map((medicine) => (
       <MedicineItem
-        key={medicine.id}
         id={medicine.id}
+        key={medicine.id}
         name={medicine.name}
         description={medicine.description}
         price={medicine.price}
