@@ -25,10 +25,10 @@ const MedicineForm = props =>{
     return (
       <form className={classes.form} onSubmit={submithandler}>
         <Input
-        ref={amountInputref}
+          ref={amountInputref}
           label="Amount"
           input={{
-            id: 'amount_' + props.id,
+            id: "amount_" + props.id,
             type: "number",
             min: "1",
             max: "5",

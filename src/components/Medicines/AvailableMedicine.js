@@ -26,6 +26,7 @@ const AvailableMedicine = (props) => {
     const medicines = DUMMY_MEDICINE.map((medicine) => (
       <MedicineItem
         key={medicine.id}
+        id={medicine.id}
         name={medicine.name}
         description={medicine.description}
         price={medicine.price}

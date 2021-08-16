@@ -1,10 +1,23 @@
 import React from 'react';
 import MedicineForm from './MedicineForm';
 import classes from './MedicineItem.module.css';
+import { useContext } from 'react';
+import CartContext from '../../../store/cart-context';
 
 const MedicineItem = (props) => {
+    const cartCtx = useContext(CartContext);
 
     const price = `$${props.price.toFixed(2)}`;
+
+    const addToCartHandler = amount => {
+        cartCtx.addItem({
+            id: props.id,
+            name: props.name,
+            amount: amount,
+            price: props.price
+        });
+    };
+
     return (
         <li className={classes.meal}>
             <div>
@@ -13,7 +26,7 @@ const MedicineItem = (props) => {
                 <div className={classes.price}>{price}</div>
             </div>
             <div>
-                <MedicineForm />
+                <MedicineForm onAddToCart={addToCartHandler} />
             </div>
         </li>
     );
