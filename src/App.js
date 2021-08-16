@@ -1,13 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Cart from './components/Cart/Cart';
 import Header from './components/Layout/Header';
 import Medicine from './components/Medicines/Medicine';
+import CartProvider from './store/CartProvider';
 
 function App() {
 
-  const [cartIsShown, setCartIsShown] = useState(true);
+  const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -17,13 +18,13 @@ function App() {
   };
   
   return (
-    <Fragment>
+    <CartProvider>
      {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <main>
         <Medicine />
       </main>
-    </Fragment>
+    </CartProvider>
   );
 }
 
