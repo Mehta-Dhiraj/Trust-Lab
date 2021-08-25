@@ -7,6 +7,15 @@
     overflow: scroll;
   }
 
+  .medicineLoading{
+    text-align: center;
+    color:black;
+  }
+.medicineError{
+  text-align: center;
+    color:red;
+}
+  
   .mealsLoading{
     text-align: center;
     color: rgb(92, 165, 110);
